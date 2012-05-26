@@ -46,14 +46,6 @@ function find_next_target() {
 	var groups = target_groups();
 	var paths = target_paths(groups);
 	var target = null, distance = 10000;
-	var targets = new Array();
-	for (var item in paths) {
-		targets.push(paths[item][0]);
-	}
-	targets = make_target_path([], targets, targets.length, 10000);
-	if (!targets) return null;
-	return targets[0];
-	/*
 	for (var item in paths) {
 		var path = paths[item];
 		var length = target_path_length(path);
@@ -62,7 +54,6 @@ function find_next_target() {
 			distance = length;
 		}
 	}
-	*/
 	return target;
 }
 
